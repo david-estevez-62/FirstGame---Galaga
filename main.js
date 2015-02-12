@@ -34,7 +34,13 @@ function preload() {
 
 	
     // game.load.image('button2', 'credits.png');
-    game.load.image('logo', 'logogalaga2.png');
+    game.load.image('logo', 'logogalaga5.png');
+
+
+
+
+    game.load.audio('laser', 'LaserGun.mp3')
+    // game.load.audio('thruster', 'thruster.wav')
 }
 
 function create() {
@@ -79,7 +85,7 @@ function create() {
 		bullet1.body.velocity.y = -800; 
 		bullet2.body.velocity.y = -800; 
 
-		
+		sound = game.sound.play('laser');
 
 	}
 
@@ -113,6 +119,9 @@ function create() {
 
 function update() {
 
+
+	// music = game.sound.play('thruster');
+
 	starfield.tilePosition.y += 5;
 	
 
@@ -120,13 +129,16 @@ function update() {
 	// move ship using arrow keys //
 	/////////////////////////////////
 	if (game.hasStarted === true) {
+
 		if (ship.isMoving === "left"){
 
-			ship.x-=20
+			ship.x-=20;
+			
 
 		} else if (ship.isMoving === "right") {
 
-			ship.x+=20
+			ship.x+=20;
+
 
 		} 
 	}
@@ -138,17 +150,15 @@ function update() {
 	////////////////////////////
 	// move ship using mouse //
 	////////////////////////////
-	
-	// var shipHalfWidth = ship.width / 2;
 	// ship.x = game.input.x;
-
-	// if (ship.x < shipHalfWidth) {
- //            ship.x = shipHalfWidth;
+	 
+ //        var shipHalfWidth = ship.width / 2;
         
- //    } else if (ship.x > game.width - shipHalfWidth) {
+ //        if (ship.x < shipHalfWidth) {
+ //            ship.x = shipHalfWidth;
+ //        } else if (ship.x > game.width - shipHalfWidth) {
  //            ship.x = game.width - shipHalfWidth;
- //    } 
-
+ //        } 
 
 
  }
