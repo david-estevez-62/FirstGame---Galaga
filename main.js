@@ -117,7 +117,7 @@ function create() {
 
 
 
-		function createAliens() { //aliens 3 verde
+		function createAliens() { 
             for (var y = 0; y <= 2; y++)
             {
                 for (var x = 0; x < 8; x++)
@@ -133,7 +133,7 @@ function create() {
             }
             aliens1.x = 100;
             aliens1.y = 50;
-            //  All this does is basically start the invaders moving. Notice we're moving the Group they belong to, rather than the invaders directly.
+            //  This is what allows the aliens to move
             var tween = game.add.tween(aliens1).to({x: 200}, 2000, Phaser.Easing.Circular.InOut, true, 9400, 100, true);
             var tween2 = game.add.tween(aliens1).to({y: 510}, 2000, Phaser.Easing.Circular.InOut, true, 9200, 100, true);
             //  When the tween completes it calls descend, before looping again
@@ -150,7 +150,7 @@ function create() {
 			aliens.y += 10;
 		}
 
-
+		 //when the logo is clicked start the game and create object in this order
 	     var playGame = function () {
 
 	     	game.hasStarted = true;
